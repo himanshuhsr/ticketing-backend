@@ -5,6 +5,8 @@ const config = require('./config/config');
 const morgan = require('morgan');
 var fs = require('fs');
 var path = require('path');
+var authRoutes = require('./routes/Auth');
+var ticketRoutes = require('./routes/Ticket');
 
 // Database connection
 mongoose
@@ -22,9 +24,9 @@ app.use(morgan('combined', { stream: accessLogStream }));
 
 app.use(express.json());
 
-app.get('/', function (req, res) {
-    res.send('hello, world!');
-});
+// Connect routes
+app.use('/api/v1/users', authRoutes);
+app.use('/api/v1/tickets', ticketRoutes);
 
 app.listen(config.server.port, () => {
     console.log('Backend Server is running!');
