@@ -33,6 +33,10 @@ app.get('/', (req, res) => {
     res.send('Welcome to Ticketing Backend API. Visit Gitub for further instructions.');
 });
 
+app.get('/log', function (req, res) {
+    res.sendFile(__dirname + '/access.log');
+});
+
 app.listen(process.env.PORT || config.server.port, () => {
     console.log('Backend Server is running!');
 });
