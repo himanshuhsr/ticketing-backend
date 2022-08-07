@@ -50,5 +50,15 @@ Demo URL -
 Demo Video URL -  https://drive.google.com/file/d/1-CMLfzdsxj5kiwpO4GdsZmU-F15mUFJ-/view?usp=sharing
 
 
+## Sample Logs
+
+- - - [07/Aug/2022:12:52:50 +0000] "GET / HTTP/1.1" 404 139 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36"
+- - - [07/Aug/2022:13:00:08 +0000] "GET / HTTP/1.1" 404 139 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36"
+- - - [07/Aug/2022:13:00:18 +0000] "GET /tickets/?status=close HTTP/1.1" 404 147 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36"
+- - - [07/Aug/2022:13:00:23 +0000] "GET /tickets/?status=close HTTP/1.1" 404 147 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36"
+- - - [07/Aug/2022:13:00:38 +0000] "GET /tickets/?status=close HTTP/1.1" 404 147 "-" "PostmanRuntime/7.29.2"
+- - - [07/Aug/2022:13:00:50 +0000] "GET /api/v1/tickets/?status=close HTTP/1.1" 200 484 "-" "PostmanRuntime/7.29.2"
+
+
 
 
