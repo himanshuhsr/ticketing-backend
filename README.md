@@ -49,6 +49,8 @@ Demo URL - https://damp-sands-21373.herokuapp.com/
 
 Demo Video URL -  https://drive.google.com/file/d/18DRK90iWudpn4Akx9W3pqokrdAZVUNqG/view?usp=sharing
 
+Log File URL - https://damp-sands-21373.herokuapp.com/log
+
 
 ## Sample Logs
 
