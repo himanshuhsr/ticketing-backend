@@ -1,7 +1,7 @@
 {
   "name": "ticketing-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "rate Calibre Backend (Node) Feature Building",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js"
