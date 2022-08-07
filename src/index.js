@@ -7,6 +7,8 @@ var fs = require('fs');
 var path = require('path');
 var authRoutes = require('./routes/Auth');
 var ticketRoutes = require('./routes/Ticket');
+const dotenv = require('dotenv');
+dotenv.config();
 
 // Database connection
 mongoose
@@ -28,6 +30,6 @@ app.use(express.json());
 app.use('/api/v1/users', authRoutes);
 app.use('/api/v1/tickets', ticketRoutes);
 
-app.listen(config.server.port, () => {
+app.listen(process.env.PORT || config.server.port, () => {
     console.log('Backend Server is running!');
 });
