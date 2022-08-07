@@ -45,7 +45,7 @@ Other endpoints are
 
 
 
-Demo URL - https://damp-sands-21373.herokuapp.com/api/v1/users/new
+Demo URL - https://damp-sands-21373.herokuapp.com/
 
 Demo Video URL -  https://drive.google.com/file/d/18DRK90iWudpn4Akx9W3pqokrdAZVUNqG/view?usp=sharing
 
