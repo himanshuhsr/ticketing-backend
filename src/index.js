@@ -29,6 +29,9 @@ app.use(express.json());
 // Connect routes
 app.use('/api/v1/users', authRoutes);
 app.use('/api/v1/tickets', ticketRoutes);
+app.get('/', (req, res) => {
+    res.send('Welcome to Ticketing Backend API. Visit Gitub for further instructions.');
+});
 
 app.listen(process.env.PORT || config.server.port, () => {
     console.log('Backend Server is running!');
