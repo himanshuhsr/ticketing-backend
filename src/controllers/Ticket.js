@@ -81,24 +81,23 @@ const markAsClosed = async (req, res) => {
                 if (priority == 'low') {
                     let allTickets = await Ticket.find({ priority: { $in: ['high', 'medium'] }, assignedTo: loggedUser.username, status: { $eq: 'open' } });
 
-                    if (allTickets.length > 3) {
+                    if (allTickets.length > 0) {
                         res.status(202).json({ error: 'A higher priority task remains to be closed', allTickets });
                     } else {
                         let updatedTicket = await Ticket.findByIdAndUpdate(id, { $set: { status: 'close' } });
-                        if (updatedTicket.length > 3) {
+                        if (updatedTicket) {
                             return res.status(200).json(updatedTicket);
                         } else {
                             return res.status(400).json('Some error occured! Try Again!');
                         }
                     }
                 } else if (priority == 'medium') {
-                    let allTickets = await Ticket.find({ priority: 'high', assignedTo: loggedUser.username, status: 'open' });
-
-                    if (allTickets.length > 3) {
-                        res.status(202).json({ error: 'A higher priority task remains to be closed', allTickets });
+                    let allTickets = await Ticket.find({ priority: 'high', assignedTo: loggedUser.username, status: 'open' }).exec();
+                    if (allTickets.length > 0) {
+                        res.status(401).json({ error: 'A higher priority task remains to be closed', allTickets });
                     } else {
                         let updatedTicket = await Ticket.findByIdAndUpdate(id, { $set: { status: 'close' } });
-                        if (updatedTicket.length > 3) {
+                        if (updatedTicket) {
                             return res.status(200).json(updatedTicket);
                         } else {
                             return res.status(400).json('Some error occured! Try Again!');
@@ -106,7 +105,7 @@ const markAsClosed = async (req, res) => {
                     }
                 } else {
                     let updatedTicket = await Ticket.findByIdAndUpdate(id, { $set: { status: 'close' } });
-                    if (updatedTicket.length > 3) {
+                    if (updatedTicket) {
                         return res.status(200).json(updatedTicket);
                     } else {
                         return res.status(400).json('Some error occured! Try Again!');
